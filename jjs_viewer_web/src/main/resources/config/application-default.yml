@@ -1,0 +1,12 @@
+viewer:
+  name: default
+
+# 本地开发禁用掉访问日志
+server:
+  undertow:
+    accesslog:
+      enabled: false
+# 本地开发禁用管理权限验证
+management:
+  security:
+    enabled: false

@@ -1,0 +1,57 @@
+# 配置文件的命名有严格要求
+# application.yml 为默认配置 任何环境中都会引入 后续的配置会覆盖掉此文件配置
+# application-{profile}.yml 为各环境对应配置文件 与spring.profiles.active=profile有关系
+# online      对应线上配置 与spring.profiles.active=online对应
+# onlinetest  对应线上测试配置 与spring.profiles.active=onlinetest对应
+# test        对应测试环境配置 与spring.profiles.active=test对应
+# localtest   对应开发环境配置 与spring.profiles.active=localtest对应
+# default     对应默认配置
+# 服务器先关配置
+server:
+  # 绑定地址
+  address: 127.0.0.1
+  # 监听端口
+  port: 8081
+  # 服务根路径
+  context-path: /viewer/
+  # 应用显示名
+  display-name: jjs_viewer
+  # 资源访问 压缩先关配置
+  compression:
+    enabled: true
+  # 内嵌服务器配置
+  undertow:
+    # 工作线程数量
+    worker-threads: 24
+    # 访问日志
+    accesslog:
+      dir: ./viewer-log/
+      enabled: true
+# spring 先关配置
+spring:
+  # 静态资源先关配置
+  resources:
+    # 静态资源位置 以下为默认值
+    static-locations:
+      - classpath:/static/
+  # freemarker先关配置
+  freemarker:
+    # 模板位置
+    template-loader-path: classpath:/templates/
+    # 模板编码
+    charset: UTF-8
+    # 模板变异后的格式
+    content-type: text/html
+  # http 先关配置
+  http:
+    # 表单中多部件内容,一般指文件之类的
+    multipart:
+      # 文件大小限制
+      max-file-size: 100MB
+
+# 应用管理先关配置
+management:
+  # 安全先关配置
+  security:
+    # 关闭安全检查 用于测试而已
+    enabled: true

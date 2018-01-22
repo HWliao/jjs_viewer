@@ -36,6 +36,13 @@ spring:
     # 静态资源位置 以下为默认值
     static-locations:
       - classpath:/static/
+    chain:
+      # 静态资源版本控制策略 内容hash
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+
   # freemarker先关配置
   freemarker:
     # 模板位置
@@ -53,7 +60,7 @@ spring:
 
 # 日志配置先关
 logging:
-  file: ./viewer-log/log.log
+  file: ./viewer-log/log  .log
 
 # 应用管理先关配置
 management:

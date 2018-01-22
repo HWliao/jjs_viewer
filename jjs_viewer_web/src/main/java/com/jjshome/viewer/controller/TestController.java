@@ -1,6 +1,8 @@
 package com.jjshome.viewer.controller;
 
 import com.google.common.collect.Lists;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +21,15 @@ import java.util.Map;
 @Controller
 public class TestController {
 
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
+
   @Value("${viewer.name}")
   private String name;
 
   @RequestMapping("/test")
   @ResponseBody
   public Object getTestData() {
+    this.logger.debug("lhw");
     Map<String, String> result = new HashMap<String, String>(12);
     result.put("test", this.name);
     result.forEach((entry, test) -> {

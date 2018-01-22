@@ -1,6 +1,10 @@
 viewer:
   name: default
 
+# 日志配置先关
+logging:
+  file: ~
+
 # 本地开发禁用掉访问日志
 server:
   undertow:

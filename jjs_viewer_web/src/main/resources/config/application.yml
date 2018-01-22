@@ -6,6 +6,7 @@
 # test        对应测试环境配置 与spring.profiles.active=test对应
 # localtest   对应开发环境配置 与spring.profiles.active=localtest对应
 # default     对应默认配置
+
 # 服务器先关配置
 server:
   # 绑定地址
@@ -27,6 +28,7 @@ server:
     accesslog:
       dir: ./viewer-log/
       enabled: true
+
 # spring 先关配置
 spring:
   # 静态资源先关配置
@@ -48,6 +50,10 @@ spring:
     multipart:
       # 文件大小限制
       max-file-size: 100MB
+
+# 日志配置先关
+logging:
+  file: ./viewer-log/log.log
 
 # 应用管理先关配置
 management:

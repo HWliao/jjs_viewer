@@ -51,7 +51,7 @@ spring:
     charset: UTF-8
     # 模板变异后的格式
     content-type: text/html
-    # 设置模板中request context
+    # 在模板中通过rc 访问 request context
     request-context-attribute: rc
   # http 先关配置
   http:

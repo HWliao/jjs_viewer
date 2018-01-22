@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.resource.ResourceUrlProvider;
 
-import javax.annotation.PostConstruct;
-
 /**
  * 在说与controller中织入 静态资源路径处理器
  *
@@ -19,6 +17,7 @@ public class ResourceUrlProviderAdvice {
   private ResourceUrlProvider resourceUrlProvider;
 
   /**
+   * 在模板中可以通过urls访问 provider
    * ${urls.getForLookupPath('/js/common.js')} 在模板中调用 对资源内容hash
    */
   @ModelAttribute("urls")

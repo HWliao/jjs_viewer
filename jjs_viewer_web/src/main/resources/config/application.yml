@@ -23,7 +23,7 @@ server:
   # 内嵌服务器配置
   undertow:
     # 工作线程数量
-    worker-threads: 24
+    worker-threads: 1000
     # 访问日志
     accesslog:
       dir: ./viewer-log/
@@ -51,6 +51,8 @@ spring:
     charset: UTF-8
     # 模板变异后的格式
     content-type: text/html
+    # 设置模板中request context
+    request-context-attribute: rc
   # http 先关配置
   http:
     # 表单中多部件内容,一般指文件之类的

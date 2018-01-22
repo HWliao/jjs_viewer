@@ -6,5 +6,6 @@
 </head>
 <body>
 <h1>1111templates</h1>
+<script src="${rc.contextPath}${urls.getForLookupPath('/js/vendor/numeral.min.js')}"></script>
 </body>
 </html>
